@@ -1,5 +1,34 @@
-image: joerocklin/po-util
+image:
+  file: Dockerfile
+  
+ports:
+  - port: 8001
+  
+tasks:
+  -  command: mkdir /workspace/po/logs                                                                    &&
+              mkdir /workspace/po/openthread-all                                                          &&
+              touch /workspace/po/logs/gitpod-install-log.txt                                             &&
+       
 
+              echo "Starting .gitpod.yml installation" &>>  /workspace/po/logs/gitpod-install-log.txt     &&
+              cd /workspace/po/openthread-all                                                             &&
+              git clone https://github.com/openthread/wpantund.git                                                             &&
+              git clone https://github.com/openthread/borderrouter.git                                                         &&
+              git clone https://github.com/openthread/openthread.git                                                           &&
+              git clone https://github.com/openthread/pyspinel.git                                                             &&
+              
+              
+              
+              
+              echo "Starting Apache"                   &>>  /workspace/po/logs/gitpod-install-log.txt     &&   
+              apachectl start                                                                                                  &&
+              gp preview $(gp url 8001)                                                                                        &&
+              
+              
+              echo "Ending .gitpod.yml installation"  &>>   /workspace/po/logs/gitpod-install-log.txt    
+              
+              
+     
 
 
 
