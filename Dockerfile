@@ -2,10 +2,11 @@ FROM gitpod/workspace-full:latest
 
 USER root
 
-RUN apt-get update                                                                                        \
-    && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends dbus gcc g++ automake    \
-               libtool lsb-release make  clang-format-6.0   libdbus-1-dev libboost-dev libreadline-dev    \                                     
-               autoconf autoconf-archive  software-properties-common bsdtar                \
+RUN apt-get update                                                                                               \
+    && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends dbus gcc g++ automake           \
+               libtool lsb-release make  clang-format-6.0   libdbus-1-dev libboost-dev libreadline-dev           \                                     
+               autoconf autoconf-archive  software-properties-common bsdtar                                      \
+               sudo curl git gzip python gnupg2 software-properties-common build-essential libarchive-zip-perl   \
     && apt-get update  
 
 
