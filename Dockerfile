@@ -7,11 +7,10 @@ RUN apt-get update                                                              
                libtool lsb-release make  clang-format-6.0   libdbus-1-dev libboost-dev libreadline-dev           \                                     
                autoconf autoconf-archive  software-properties-common bsdtar                                      \
                sudo curl git gzip python gnupg2 software-properties-common build-essential libarchive-zip-perl   \
-    && apt-get update  
-
-RUN /bin/bash -c "bash <(curl -sL https://particle.io/install-cli)"
-RUN /bin/bash -c "bash <(curl -sL get.po-util.com)"
-#RUN po
+    && apt-get update                                                   \
+    && /bin/bash -c "bash <(curl -sL https://particle.io/install-cli)"  \
+    && /bin/bash -c "bash <(curl -sL get.po-util.com)"                  \
+    && po
 
 ## NOTE: not installing libreadline and libglib2.0-dev may cause some issues
 
