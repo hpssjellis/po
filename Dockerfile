@@ -46,9 +46,8 @@ RUN mkdir -p /home/gitpod/logs                                                  
     WORKDIR /home/gitpod/.po
     
     RUN  /bin/bash -c "bash <(curl -sL https://particle.io/install-cli)"  \
-    && /bin/bash -c "bash <(curl -sL get.po-util.com)"                  
-    #\
-    #&& po | y
+    && /bin/bash -c "bash <(curl -sL get.po-util.com)"                    \
+    && po -y
    
 
 # Give back control
