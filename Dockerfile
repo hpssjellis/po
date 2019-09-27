@@ -33,16 +33,21 @@ RUN apt update && apt install -y --no-install-recommends \
  
 
 USER gitpod
+
   
-RUN mkdir -p /home/gitpod/logs                                                                            \ 
+RUN mkdir -p /home/gitpod/logs                                                                            \
+    && mkdir -p /home/gitpod/.po                                                                          \ 
     && touch /home/gitpod/logs/myDockerlog.txt                                                            \
     && echo "Installation start, made some folders in /home/gitpod" >> /home/gitpod/logs/myDockerlog.txt  \
     && echo "Installation end"                                      >> /home/gitpod/logs/myDockerlog.txt  
     
-    #\
-    #&& /bin/bash -c "bash <(curl -sL https://particle.io/install-cli)"  \
-    #&& /bin/bash -c "bash <(curl -sL get.po-util.com)"                  \
-    #&& po | y
+    
+    
+    WORKDIR /home/gitpod/.po
+    
+    RUN  /bin/bash -c "bash <(curl -sL https://particle.io/install-cli)"  \
+    && /bin/bash -c "bash <(curl -sL get.po-util.com)"                  \
+    && po | y
    
 
 # Give back control
