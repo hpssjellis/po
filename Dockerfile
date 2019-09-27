@@ -7,10 +7,7 @@ RUN apt-get update                                                              
                libtool lsb-release make  clang-format-6.0   libdbus-1-dev libboost-dev libreadline-dev           \                                     
                autoconf autoconf-archive  software-properties-common bsdtar                                      \
                sudo curl git gzip python gnupg2 software-properties-common build-essential libarchive-zip-perl   \
-    && apt-get update                                                   \
-    && /bin/bash -c "bash <(curl -sL https://particle.io/install-cli)"  \
-    && /bin/bash -c "bash <(curl -sL get.po-util.com)"                  \
-    && po
+    && apt-get update                                                  
 
 ## NOTE: not installing libreadline and libglib2.0-dev may cause some issues
 
@@ -40,7 +37,10 @@ USER gitpod
 RUN mkdir -p /home/gitpod/logs                                                                            \ 
     && touch /home/gitpod/logs/myDockerlog.txt                                                            \
     && echo "Installation start, made some folders in /home/gitpod" >> /home/gitpod/logs/myDockerlog.txt  \
-    && echo "Installation end"                                      >> /home/gitpod/logs/myDockerlog.txt  
+    && echo "Installation end"                                      >> /home/gitpod/logs/myDockerlog.txt  \
+    && /bin/bash -c "bash <(curl -sL https://particle.io/install-cli)"  \
+    && /bin/bash -c "bash <(curl -sL get.po-util.com)"                  \
+    && po 
    
 
 # Give back control
