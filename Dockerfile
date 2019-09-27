@@ -37,10 +37,12 @@ USER gitpod
 RUN mkdir -p /home/gitpod/logs                                                                            \ 
     && touch /home/gitpod/logs/myDockerlog.txt                                                            \
     && echo "Installation start, made some folders in /home/gitpod" >> /home/gitpod/logs/myDockerlog.txt  \
-    && echo "Installation end"                                      >> /home/gitpod/logs/myDockerlog.txt  \
-    && /bin/bash -c "bash <(curl -sL https://particle.io/install-cli)"  \
-    && /bin/bash -c "bash <(curl -sL get.po-util.com)"                  \
-    && po | y
+    && echo "Installation end"                                      >> /home/gitpod/logs/myDockerlog.txt  
+    
+    #\
+    #&& /bin/bash -c "bash <(curl -sL https://particle.io/install-cli)"  \
+    #&& /bin/bash -c "bash <(curl -sL get.po-util.com)"                  \
+    #&& po | y
    
 
 # Give back control
