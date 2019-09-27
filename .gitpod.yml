@@ -17,7 +17,12 @@ tasks:
               git clone https://github.com/openthread/openthread.git                                                           &&
               git clone https://github.com/openthread/pyspinel.git                                                             &&
               
-              sh -c "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install.sh)"  &&
+              
+              
+              #sh -c "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install.sh)"  &&
+              
+              sh -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)" < /dev/null  &&
+              
               export PATH=${PATH}:/home/gitpod/.linuxbrew/bin                                              &&
               
               
