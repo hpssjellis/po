@@ -40,7 +40,7 @@ RUN mkdir -p /home/gitpod/logs                                                  
     && echo "Installation end"                                      >> /home/gitpod/logs/myDockerlog.txt  \
     && /bin/bash -c "bash <(curl -sL https://particle.io/install-cli)"  \
     && /bin/bash -c "bash <(curl -sL get.po-util.com)"                  \
-    && po 
+    && po | y
    
 
 # Give back control
