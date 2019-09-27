@@ -26,6 +26,14 @@ tasks:
               gp preview $(gp url 8001)                                                                                        &&
               
               
+              po init argon myProjectName  &&
+              cd myProjectName             &&
+              po config mesh-develop       &&
+              po setup-mesh                &&
+              MODULAR=n po argon build     &&
+              
+              
+              
               echo "Ending .gitpod.yml installation"  &>>   /workspace/po/logs/gitpod-install-log.txt    
               
               
